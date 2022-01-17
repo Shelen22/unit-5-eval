@@ -33,30 +33,30 @@ const Login = () => {
         }
     
     return (
-        <form onSubmit={(e) => e.preventDefault()}>
+        <Form onSubmit={(e) => e.preventDefault()}>
             <div>
                 <h2>user Login</h2>
                 <input type="text" name="email" placeholder="Enter Email" onChange={handlechange}></input>
                 <input type = "password" name="password" placeholder="Enter Password" onChange={handlechange}></input>
                 <button onClick={getToken} >Login</button>
             </div>
-        </form>
+        </Form>
     )
 }
  
-// const Form = styled.form`
-// width:300px;
-// height:400px;
-// justify-content: space-between;
-// align-items:center;
-// margin:auto;
-//  input{
-//      margin:2%;
-//      font-size:12px;
-//  }
-//  button{
-//      border-radius:5px;
-//      font-size:12px;
-//  }
-// `
+const Form = styled.form`
+width:300px;
+height:400px;
+justify-content: space-between;
+align-items:center;
+margin:auto;
+ input{
+     margin:2%;
+     font-size:12px;
+ }
+ button{
+     border-radius:5px;
+     font-size:12px;
+ }
+`
 export default Login
