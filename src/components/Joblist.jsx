@@ -5,7 +5,7 @@ import { addJob , getJob} from "../features/action"
 
 const Joblist = () => {
     const [text , setText] = useState("");
-    const { lists } = useSelector((state) =>state)
+    const lists  = useSelector((state) =>state.lists)
     const dispatch = useDispatch()
     const handleinput = (e) =>{
         setText(e.target.value)
@@ -13,7 +13,7 @@ const Joblist = () => {
     const handleList = () =>{
         fetch("http://localhost:3006/lists",{
             method: "POST",
-            body : JSON.stringify({lists}),
+            body : JSON.stringify(lists),
             headers: {
                 "content-type": "application/json"
             }

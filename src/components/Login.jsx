@@ -34,12 +34,10 @@ const Login = () => {
     
     return (
         <Form onSubmit={(e) => e.preventDefault()}>
-            <div>
                 <h2>user Login</h2>
                 <input type="text" name="email" placeholder="Enter Email" onChange={handlechange}></input>
                 <input type = "password" name="password" placeholder="Enter Password" onChange={handlechange}></input>
                 <button onClick={getToken} >Login</button>
-            </div>
         </Form>
     )
 }
