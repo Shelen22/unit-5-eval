@@ -2,7 +2,7 @@ import React from 'react'
 import { createContext , useState } from "react";
 
 export const AuthContext = createContext();
-export const AuthContextProvider = ({childern}) =>{
+export const AuthContextProvider = ({children}) =>{
     const [token , setToken] = useState("");
 
     const handleToken = (token) =>{
@@ -10,7 +10,7 @@ export const AuthContextProvider = ({childern}) =>{
     };
     return(
         <AuthContext.Provider value = {{token , handleToken }}>
-            {childern}
+            {children}
         </AuthContext.Provider>
     )
 }

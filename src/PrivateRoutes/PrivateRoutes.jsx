@@ -10,7 +10,7 @@ function PrivateRoutes({childern}) {
     if(!token){
         return <Navigate to = "/login" />
     }
-    return childern
+    return childern;
 }
 
 
