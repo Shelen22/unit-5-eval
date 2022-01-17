@@ -6,6 +6,8 @@ import { addJob , getJob} from "../features/action"
 const Joblist = () => {
     const [text , setText] = useState("");
     const lists  = useSelector((state) =>state.lists)
+    console.log('lists:', lists)
+
     const dispatch = useDispatch()
     const handleinput = (e) =>{
         setText(e.target.value)
@@ -13,7 +15,7 @@ const Joblist = () => {
     const handleList = () =>{
         fetch("http://localhost:3006/lists",{
             method: "POST",
-            body : JSON.stringify(lists),
+            body : JSON.stringify(),
             headers: {
                 "content-type": "application/json"
             }
@@ -32,7 +34,7 @@ const Joblist = () => {
           <input type="text" value = {text} placeholder="JoB Discription" onChange={handleinput}></input>
           <input type="text" value = {text} placeholder="Location" onChange={handleinput}></input>
           <input type="text" value = {text} placeholder="Job Type" onChange={handleinput}></input>
-          <button onclick = {handleList} >Add Job</button>
+          <button onClick = {handleList} >Add Job</button>
         </div>
     )
 }

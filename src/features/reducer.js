@@ -2,8 +2,8 @@ import { ADD_JOB, GET_JOB } from "./actionType"
 
 
 
-const init = {lists: []}
-export const reducer = (state = init, {type, payload}) =>{
+
+export const reducer = (state ={lists:[]}, {type, payload}) =>{
     switch(type){
         case ADD_JOB:
             return{
