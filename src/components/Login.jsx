@@ -1,9 +1,16 @@
 import React from 'react';
 import { useContext, useState } from 'react';
+import { useNavigate } from 'react-router-dom';
+import styled from "styled-components";
+import { AuthContext } from '../context/AuthContext';
 
 
 const Login = () => {
     const [form , setForm] = useState({});
+
+    const navigate = useNavigate();
+
+    const  { handleToken } = useContext(AuthContext)
     const handlechange = ({target : {name,value}}) =>{
         setForm({
             ...form,
@@ -20,7 +27,8 @@ const Login = () => {
             })
             .then((res) => res.json())
             .then((res) =>{
-                ha
+                handleToken(res.token);
+                navigate(-1)
             })
         }
     

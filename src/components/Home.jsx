@@ -1,11 +1,11 @@
 import React from 'react'
 
-const Joblist = () => {
+const Home = () => {
     return (
         <div>
-          list of
+            <h1>Home</h1>
         </div>
     )
 }
 
-export default Joblist
+export default Home
